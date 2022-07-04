@@ -118,52 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Goomba2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\enemys\Goomba.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mushroompick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\mushroompick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="media.io_UmYAeRv8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\media.io_UmYAeRv8.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="breakable" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\breakable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Question_Block" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\Question Block.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mistery_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\mistery_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mario_coin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\mario-coin.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mistery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\mistery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\assets\original\lvl1\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Goomba" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\enemys\Goomba.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pipe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\Pipe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\assets\original\lvl1\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="brick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\brick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Goomba1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\enemys\Goomba1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="breakable1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\lvl1\breakable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bRmarioidle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\assets\original\characters\bRmarioidle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

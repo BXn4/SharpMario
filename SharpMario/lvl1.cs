@@ -31,8 +31,8 @@ namespace SharpMario
         DateTime _lastCheckTime = DateTime.Now;
         long _frameCount = 0;
         bool mariodied = false;
-        [DllImport("winmm.dll")]
-        static extern Int32 mciSendString(string command, StringBuilder buffer, int bufferSize, IntPtr hwndCallback);
+        int coins = 0;
+
         private void lvl1_Load(object sender, EventArgs e)
         {
             mario.Image = Image.FromFile(@"assets\original\characters\sRmarioidle.png");
@@ -43,15 +43,27 @@ namespace SharpMario
             mistery2.Image = Image.FromFile(@"assets\original\lvl1\Question Block.gif");
             mistery3.Image = Image.FromFile(@"assets\original\lvl1\Question Block.gif");
             mistery4.Image = Image.FromFile(@"assets\original\lvl1\Question Block.gif");
+            mistery5.Image = Image.FromFile(@"assets\original\lvl1\Question Block.gif");
             coin1.Image = Image.FromFile(@"assets\original\lvl1\mario-coin.gif");
             coin3.Image = Image.FromFile(@"assets\original\lvl1\mario-coin.gif");
             coin4.Image = Image.FromFile(@"assets\original\lvl1\mario-coin.gif");
             coin5.Image = Image.FromFile(@"assets\original\lvl1\mario-coin.gif");
+            coinhud.Image = Image.FromFile(@"assets\original\lvl1\mario-coin.gif");
             brick1.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
             brick2.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
             brick3.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick4.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick5.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick6.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick7.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick8.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick9.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick10.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick11.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
+            brick12.Image = Image.FromFile(@"assets\original\lvl1\breakable.png");
             mushroom1.Image = Image.FromFile(@"assets\original\mushroompick.png");
             bg.Image = Image.FromFile(@"assets\original\lvl1\background.png");
+            goomba1.Image = Image.FromFile(@"assets\original\enemys\Goomba.gif");
             mario.BackColor = Color.Transparent;
         }
         double GetFps()
@@ -61,7 +73,7 @@ namespace SharpMario
             double fps = count / secondsElapsed;
             _lastCheckTime = DateTime.Now;
             double fpsrounded = Math.Round(fps, 0);
-            fpsLbl.Text = $"{fpsrounded}";
+            fpsLbl.Text = $"{ fpsrounded}";
             return fps;
         }
         bool playerjumpedgoomba1 = false;
@@ -130,7 +142,6 @@ namespace SharpMario
                             mistery4.Location = new Point(mistery4.Location.X, 161);
                             mistery5.Location = new Point(mistery5.Location.X, 277);
                         }
-                        //x.BringToFront();
                     }
                     if (playerIsSmall == true)
                     {
@@ -439,6 +450,7 @@ namespace SharpMario
                             coin1.Visible = true;
                             pictureBox97.Location = new Point(0, 0);
                             coinAnim.Start();
+                            coins++;
                         }
                     }
                     if ((string)x.Tag == "mistery2")
@@ -466,6 +478,7 @@ namespace SharpMario
                             coin3.Visible = true;
                             pictureBox110.Location = new Point(0, 0);
                             coinAnim.Start();
+                            coins++;
                         }
                     }
                     if ((string)x.Tag == "mistery4")
@@ -479,6 +492,7 @@ namespace SharpMario
                             coin4.Visible = true;
                             pictureBox100.Location = new Point(0, 0);
                             coinAnim.Start();
+                            coins++;
                         }
                     }
                     if ((string)x.Name == "mistery5cl")
@@ -492,6 +506,7 @@ namespace SharpMario
                             coin5.Visible = true;
                             mistery5cl.Location = new Point(0, 0);
                             coinAnim.Start();
+                            coins++;
                         }
                     }
                     if ((string)x.Name == "goomba1head")
@@ -514,8 +529,6 @@ namespace SharpMario
                     {
                         if (mario.Bounds.IntersectsWith(x.Bounds))
                         {
-                            //SoundPlayer coin = new SoundPlayer(@"assets\original\sounds\smb_mariodie.wav");
-                            //coin.Play();
                             goomba1enemy.Location = new Point(0, 0);
                             axWindowsMediaPlayer1.URL = (@"assets\original\sounds\smb_mariodie.wav");
                             axWindowsMediaPlayer1.settings.playCount = 1;
@@ -530,8 +543,6 @@ namespace SharpMario
                     {
                         if (mario.Bounds.IntersectsWith(x.Bounds))
                         {
-                            //SoundPlayer coin = new SoundPlayer(@"assets\original\sounds\smb_mariodie.wav");
-                            //coin.Play();
                             mariodead1.Location = new Point(0, 0);
                             axWindowsMediaPlayer1.URL = (@"assets\original\sounds\smb_mariodie.wav");
                             axWindowsMediaPlayer1.settings.playCount = 1;
@@ -546,8 +557,6 @@ namespace SharpMario
                         {
                             if (mario.Bounds.IntersectsWith(x.Bounds))
                             {
-                                //SoundPlayer coin = new SoundPlayer(@"assets\original\sounds\smb_mariodie.wav");
-                                //coin.Play();
                                 mariodead2.Location = new Point(0, 0);
                                 axWindowsMediaPlayer1.URL = (@"assets\original\sounds\smb_mariodie.wav");
                                 axWindowsMediaPlayer1.settings.playCount = 1;
@@ -748,10 +757,11 @@ namespace SharpMario
             jumpSpeed = 7;
         }
         int coinint = 0;
-        int scorenm = 0;
+        //int scorenm = 0;
         int getscore = 0;
         private void coinAnim_Tick(object sender, EventArgs e)
         {
+            coincounter.Text = coins.ToString();
             coinint++;
             if (coinint <= 10)
             {
@@ -870,8 +880,7 @@ namespace SharpMario
             if (e.KeyCode == Keys.Right)
             {
                 Right = true;
-                animation.Start();
-            }
+                animation.Start(); }
             if (e.KeyCode == Keys.Space || (e.KeyCode == Keys.LControlKey) && Jump == false)
             {
                 if (playerIsSmall == true)
@@ -886,9 +895,6 @@ namespace SharpMario
                     SoundPlayer jump = new SoundPlayer(@"assets\original\sounds\smb_jump-super.wav");
                     jump.Play();
                 }
-            }
-            else
-            {
             }
         }
 

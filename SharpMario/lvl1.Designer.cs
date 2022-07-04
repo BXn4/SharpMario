@@ -37,7 +37,6 @@
             this.coinAnim = new System.Windows.Forms.Timer(this.components);
             this.score = new System.Windows.Forms.Label();
             this.mushroommove = new System.Windows.Forms.Timer(this.components);
-            this.fpsLbl = new System.Windows.Forms.Label();
             this.goombadis = new System.Windows.Forms.Timer(this.components);
             this.mario = new System.Windows.Forms.PictureBox();
             this.goomba1 = new System.Windows.Forms.PictureBox();
@@ -113,6 +112,10 @@
             this.pl8 = new System.Windows.Forms.PictureBox();
             this.pl9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.coinhud = new System.Windows.Forms.PictureBox();
+            this.fpsLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.coincounter = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goomba1)).BeginInit();
@@ -187,6 +190,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pl8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pl9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coinhud)).BeginInit();
             this.SuspendLayout();
             // 
             // move
@@ -209,7 +213,7 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 16);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(12, 86);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
             this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(171, 73);
@@ -237,16 +241,6 @@
             this.mushroommove.Interval = 10;
             this.mushroommove.Tick += new System.EventHandler(this.mushroommove_Tick);
             // 
-            // fpsLbl
-            // 
-            this.fpsLbl.AutoSize = true;
-            this.fpsLbl.ForeColor = System.Drawing.Color.White;
-            this.fpsLbl.Location = new System.Drawing.Point(0, 0);
-            this.fpsLbl.Name = "fpsLbl";
-            this.fpsLbl.Size = new System.Drawing.Size(31, 13);
-            this.fpsLbl.TabIndex = 127;
-            this.fpsLbl.Text = "0000";
-            // 
             // goombadis
             // 
             this.goombadis.Interval = 1000;
@@ -263,7 +257,6 @@
             // 
             // goomba1
             // 
-            this.goomba1.Image = global::SharpMario.Properties.Resources.Goomba2;
             this.goomba1.Location = new System.Drawing.Point(685, 372);
             this.goomba1.Name = "goomba1";
             this.goomba1.Size = new System.Drawing.Size(32, 32);
@@ -284,7 +277,6 @@
             // 
             // brick12
             // 
-            this.brick12.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick12.Location = new System.Drawing.Point(2880, 139);
             this.brick12.Name = "brick12";
             this.brick12.Size = new System.Drawing.Size(32, 32);
@@ -295,7 +287,6 @@
             // 
             // brick11
             // 
-            this.brick11.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick11.Location = new System.Drawing.Point(2850, 139);
             this.brick11.Name = "brick11";
             this.brick11.Size = new System.Drawing.Size(32, 32);
@@ -306,7 +297,6 @@
             // 
             // brick10
             // 
-            this.brick10.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick10.Location = new System.Drawing.Point(2819, 139);
             this.brick10.Name = "brick10";
             this.brick10.Size = new System.Drawing.Size(32, 32);
@@ -317,7 +307,6 @@
             // 
             // brick9
             // 
-            this.brick9.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick9.Location = new System.Drawing.Point(2788, 139);
             this.brick9.Name = "brick9";
             this.brick9.Size = new System.Drawing.Size(32, 32);
@@ -328,7 +317,6 @@
             // 
             // brick8
             // 
-            this.brick8.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick8.Location = new System.Drawing.Point(2758, 139);
             this.brick8.Name = "brick8";
             this.brick8.Size = new System.Drawing.Size(32, 32);
@@ -339,7 +327,6 @@
             // 
             // brick7
             // 
-            this.brick7.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick7.Location = new System.Drawing.Point(2728, 139);
             this.brick7.Name = "brick7";
             this.brick7.Size = new System.Drawing.Size(32, 32);
@@ -350,7 +337,6 @@
             // 
             // brick6
             // 
-            this.brick6.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick6.Location = new System.Drawing.Point(2697, 139);
             this.brick6.Name = "brick6";
             this.brick6.Size = new System.Drawing.Size(32, 32);
@@ -361,7 +347,6 @@
             // 
             // brick5
             // 
-            this.brick5.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick5.Location = new System.Drawing.Point(2644, 277);
             this.brick5.Name = "brick5";
             this.brick5.Size = new System.Drawing.Size(32, 32);
@@ -372,7 +357,6 @@
             // 
             // mistery5
             // 
-            this.mistery5.Image = global::SharpMario.Properties.Resources.Question_Block;
             this.mistery5.Location = new System.Drawing.Point(2612, 277);
             this.mistery5.Name = "mistery5";
             this.mistery5.Size = new System.Drawing.Size(32, 32);
@@ -383,7 +367,6 @@
             // 
             // brick4
             // 
-            this.brick4.Image = global::SharpMario.Properties.Resources.breakable;
             this.brick4.Location = new System.Drawing.Point(2583, 277);
             this.brick4.Name = "brick4";
             this.brick4.Size = new System.Drawing.Size(32, 32);
@@ -1002,12 +985,56 @@
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Tag = "platform";
             // 
+            // coinhud
+            // 
+            this.coinhud.Location = new System.Drawing.Point(262, 13);
+            this.coinhud.Name = "coinhud";
+            this.coinhud.Size = new System.Drawing.Size(24, 24);
+            this.coinhud.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.coinhud.TabIndex = 193;
+            this.coinhud.TabStop = false;
+            // 
+            // fpsLbl
+            // 
+            this.fpsLbl.AutoSize = true;
+            this.fpsLbl.ForeColor = System.Drawing.Color.White;
+            this.fpsLbl.Location = new System.Drawing.Point(0, 0);
+            this.fpsLbl.Name = "fpsLbl";
+            this.fpsLbl.Size = new System.Drawing.Size(31, 13);
+            this.fpsLbl.TabIndex = 127;
+            this.fpsLbl.Text = "0000";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(288, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 24);
+            this.label1.TabIndex = 194;
+            this.label1.Text = "x";
+            // 
+            // coincounter
+            // 
+            this.coincounter.AutoSize = true;
+            this.coincounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.coincounter.ForeColor = System.Drawing.Color.White;
+            this.coincounter.Location = new System.Drawing.Point(304, 13);
+            this.coincounter.Name = "coincounter";
+            this.coincounter.Size = new System.Drawing.Size(20, 24);
+            this.coincounter.TabIndex = 195;
+            this.coincounter.Text = "0";
+            // 
             // lvl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(148)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.coincounter);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.coinhud);
             this.Controls.Add(this.mario);
             this.Controls.Add(this.goomba1);
             this.Controls.Add(this.pictureBox4);
@@ -1168,6 +1195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pl8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pl9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coinhud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1207,7 +1235,6 @@
         private System.Windows.Forms.PictureBox pictureBox113;
         private System.Windows.Forms.PictureBox coin4;
         private System.Windows.Forms.PictureBox pictureBox104;
-        private System.Windows.Forms.Label fpsLbl;
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox bg;
@@ -1257,5 +1284,9 @@
         private System.Windows.Forms.PictureBox pl8;
         private System.Windows.Forms.PictureBox pl9;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox coinhud;
+        private System.Windows.Forms.Label fpsLbl;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label coincounter;
     }
 }
